@@ -4,42 +4,42 @@ const destinations = [
         name: "La Palmera",
         description: "La Palmera is tucked in the landlocked town of Columbio, Sultan Kudarat in south central Mindanao, Philippines. The place is named after the palm plantation that surrounds the ridges. This plantation has been a source of livelihood to the B’laans– the indigenous people of Sultan Kudarat.",
         location: "La Palmera",
-        image: "img/la palmera.jpg"
+        image: "la palmera.jpg"
     },
     {
         id: 2,
         name: "Pangadilan Falls & Rock Formations",
         description: "Pangadilan Falls and Rock Formation is a must-visit for nature lovers, offering stunning rock formations and a beautiful river. Visitors mention the challenge of reaching the site due to rocky and slippery off-road conditions, advising to visit on sunny days to avoid muddy areas. ",
         location: "Pangadilan",
-        image: "img/Pangadilan Falls & Rock Formations.jpg"
+        image: "Pangadilan Falls & Rock Formations.jpg"
     },
     {
         id: 3,
         name: "Bansada Eco Park",
         description: "Bansada Agri-Eco Adventure Park in Sultan Kudarat is a serene and picturesque destination perfect for tourists seeking a blend of nature, adventure, and relaxation. With its lush landscapes, diverse flora and fauna, and recreational activities, this park offers a unique experience for all visitors.",
         location: "Bansada",
-        image: "img/Bansada eco park.jpg"
+        image: "Bansada eco park.jpg"
     },
     {
         id: 4,
         name: "Baras Bird Sanctuary",
         description: "Home to various bird species in their natural habitat. A paradise for bird watching and wildlife photography.",
         location: "Baras",
-        image: "img/Baras Birds sanctuary.jpg"
+        image: "Baras Birds sanctuary.jpg"
     },
     {
         id: 5,
         name: "Hot and Cold Marquez",
         description: "Unique spring resort with both hot and cold spring pools. Perfect for relaxation and therapeutic bathing.",
         location: "Marquez",
-        image: "img/Hot and cold marguez.jpg"
+        image: "Hot and cold marguez.jpg"
     },
     {
         id: 6,
         name: "Balot Island",
         description: "Balot Island is a pristine and enchanting island renowned for its rich marine biodiversity. It has an incredible sanctuary with abounding wealth of the sea turtles, clown fish, sea cucumbers, clams, and seashells. ",
         location: "Various Islands",
-        image: "img/balot Island.jpg"
+        image: "balot Island.jpg"
     }
 ];
 
