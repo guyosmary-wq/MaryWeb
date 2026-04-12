@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MaryWeb - Sultan Kudarat Tourism</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+    </style>
+</head>
+<body>
+    <div class="custom-cursor" id="cursor">
+        <div class="cursor-trail">
+            <i class="fas fa-leaf leaf leaf-1"></i>
+            <i class="fas fa-leaf leaf leaf-2"></i>
+            <i class="fas fa-leaf leaf leaf-3"></i>
+            <i class="fas fa-leaf leaf leaf-4"></i>
+            <i class="fas fa-leaf leaf leaf-5"></i>
+            <i class="fas fa-wind cursor-wind cursor-wind-1"></i>
+            <i class="fas fa-wind cursor-wind cursor-wind-2"></i>
+            <i class="fas fa-wind cursor-wind cursor-wind-3"></i>
+            <i class="fas fa-wind cursor-wind cursor-wind-4"></i>
+            <i class="fas fa-wind cursor-wind cursor-wind-5"></i>
+        </div>
+    </div>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">✦</span>
+                <span class="logo-text">MaryWeb</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#book">Book Now</a></li>
+                <li><a href="#admin" id="adminLink" style="display: none;">Admin</a></li>
+                <li><a href="#" class="login-btn" id="navLoginBtn">Login</a></li>
+                <li class="user-menu" id="userMenu" style="display: none;">
+                    <span class="username" id="displayUsername"></span>
+                    <a href="#" class="logout-btn" id="logoutBtn">Logout</a>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-slideshow">
+            <img src="img/la palmera.jpg" alt="La Palmera" class="hero-slide active">
+            <img src="img/Pangadilan Falls & Rock Formations.jpg" alt="Pangadilan Falls" class="hero-slide">
+            <img src="img/Bansada eco park.jpg" alt="Bansada Eco Park" class="hero-slide">
+            <img src="img/Baras Birds sanctuary.jpg" alt="Baras Bird Sanctuary" class="hero-slide">
+            <img src="img/Hot and cold marguez.jpg" alt="Hot and Cold Marquez" class="hero-slide">
+            <img src="img/balot Island.jpg" alt="Balot Island" class="hero-slide">
+            <div class="hero-nav">
+                <button class="hero-prev" onclick="changeSlide(-1)">&#10094;</button>
+                <button class="hero-next" onclick="changeSlide(1)">&#10095;</button>
+            </div>
+            <div class="hero-dots">
+                <span class="dot active" onclick="currentSlide(0)"></span>
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Discover Sultan Kudarat</h1>
+            <p class="hero-subtitle">Explore the hidden gems of Southern Philippines</p>
+            <a href="#destinations" class="cta-button">Explore Destinations</a>
+        </div>
+        <div class="hero-scroll">
+            <span>Scroll to explore</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <section class="destinations" id="destinations">
+        <div class="bg-leaves" id="bgLeavesDest"></div>
+        <div class="destinations-inner">
+            <div class="section-header">
+                <h2>Our Destinations</h2>
+                <p>Discover the beauty of Sultan Kudarat province</p>
+            </div>
+            <div class="destinations-grid" id="destinationsGrid">
+            </div>
+        </div>
+    </section>
+
+    <section class="booking-section" id="book">
+        <div class="bg-leaves" id="bgLeavesBook"></div>
+        <div class="section-header">
+            <h2>Book Your Adventure</h2>
+            <p>Reserve your perfect getaway today</p>
+        </div>
+        <div class="booking-container">
+            <form class="booking-form" id="bookingForm">
+                <div class="form-group">
+                    <label for="bookingName">Full Name</label>
+                    <input type="text" id="bookingName" name="name" required placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label for="bookingEmail">Email</label>
+                    <input type="email" id="bookingEmail" name="email" required placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="bookingPhone">Phone Number</label>
+                    <input type="tel" id="bookingPhone" name="phone" required placeholder="09xxxxxxxxx">
+                </div>
+                <div class="form-group">
+                    <label for="destination">Select Destination</label>
+                    <select id="destination" name="destination" required>
+                        <option value="">Choose a destination</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="bookingDate">Date of Visit</label>
+                        <input type="date" id="bookingDate" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="guests">Number of Guests</label>
+                        <input type="number" id="guests" name="guests" min="1" max="50" value="1" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="notes">Special Requests</label>
+                    <textarea id="notes" name="notes" rows="3" placeholder="Any special requirements?"></textarea>
+                </div>
+                <button type="submit" class="submit-btn" id="bookingSubmitBtn">
+                    <span>Book Now</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </form>
+            <div class="booking-info">
+                <h3>Why Book With Us?</h3>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> Best price guarantee</li>
+                    <li><i class="fas fa-check-circle"></i> Instant confirmation</li>
+                    <li><i class="fas fa-check-circle"></i> 24/7 customer support</li>
+                    <li><i class="fas fa-check-circle"></i> Free cancellation</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="admin-section" id="admin" style="display: none;">
+        <div class="section-header">
+            <h2>Admin Panel - Bookings</h2>
+            <p>View all bookings made by users</p>
+        </div>
+        <div class="admin-container">
+            <div class="bookings-list" id="bookingsList">
+                <p class="no-bookings">Loading bookings...</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>MaryWeb</h4>
+                <p>Your gateway to exploring the beautiful province of Sultan Kudarat, Philippines.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#destinations">Destinations</a></li>
+                    <li><a href="#book">Book Now</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> info@maryweb.com</li>
+                    <li><i class="fas fa-phone"></i> +63 900 123 4567</li>
+                    <li><i class="fas fa-map-marker"></i> Sultan Kudarat, Philippines</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MaryWeb. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="modal-close" id="closeLogin">&times;</span>
+            <h2>Welcome Back</h2>
+            <form class="login-form" id="loginForm">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required placeholder="Enter username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required placeholder="Enter password">
+                </div>
+                <button type="submit" class="login-submit-btn">Login</button>
+            </form>
+            <p class="login-note">Demo: Use username <strong>admin</strong> / password <strong>1234</strong></p>
+        </div>
+    </div>
+
+    <div class="modal" id="destinationModal">
+        <div class="modal-content destination-modal-content">
+            <span class="modal-close" id="closeDestination">&times;</span>
+            <div class="destination-modal-body">
+                <div class="destination-modal-image">
+                    <img id="modalDestImage" src="" alt="">
+                    <div class="destination-modal-nav">
+                        <button class="modal-prev" onclick="changeDest(-1)">&#10094;</button>
+                        <button class="modal-next" onclick="changeDest(1)">&#10095;</button>
+                    </div>
+                </div>
+                <div class="destination-modal-info">
+                    <span class="modal-location" id="modalDestLocation"></span>
+                    <h2 id="modalDestName"></h2>
+                    <p id="modalDestDesc"></p>
+                    <button class="card-btn" id="modalBookBtn">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="alert" id="alertBox">
+        <span class="alert-message" id="alertMessage"></span>
+        <span class="alert-close" id="alertClose">&times;</span>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
