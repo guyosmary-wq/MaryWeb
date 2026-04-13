@@ -287,7 +287,14 @@ function loadBookings() {
                                     <td>${booking.date}</td>
                                     <td>${booking.guests}</td>
                                     <td>${formatDateTime(booking.timestamp)}</td>
-                                    <td><button class="delete-btn" onclick="deleteBooking(${index})"><i class="fas fa-trash"></i></button></td>
+                                    <td>
+    <button class="cancel-btn" onclick="cancelBooking(${index})">
+        Cancel
+    </button>
+    <button class="delete-btn" onclick="deleteBooking(${index})">
+        <i class="fas fa-trash"></i>
+    </button>
+</td>
                                 </tr>
                             `).join('')}
                         </tbody>
@@ -625,7 +632,20 @@ function showAlert(message, type) {
         alertBox.style.display = 'none';
     }, 5000);
 }
+function cancelBooking(index) {
+    if (confirm('Mark this booking as cancelled?')) {
+        const sheetUrl = GOOGLE_SHEETS_URL + '?action=cancel&row=' + (index + 2);
 
+        fetch(sheetUrl, { method: "GET" })
+            .then(() => {
+                showAlert('Booking cancelled', 'success');
+                loadBookings();
+            })
+            .catch(() => {
+                showAlert('Cancel failed', 'error');
+            });
+    }
+}
 function formatDateTime(timestamp) {
     const date = new Date(timestamp);
     const options = { 
