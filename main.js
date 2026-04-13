@@ -319,6 +319,20 @@ function deleteBooking(index) {
             });
     }
 }
+function cancelBooking(index) {
+    if (confirm('Mark this booking as cancelled?')) {
+        const sheetUrl = GOOGLE_SHEETS_URL + '?action=cancel&row=' + (index + 2);
+
+        fetch(sheetUrl, { method: "GET" })
+            .then(() => {
+                showAlert('Booking marked as cancelled', 'success');
+                loadBookings();
+            })
+            .catch(() => {
+                showAlert('Cancel failed', 'error');
+            });
+    }
+}
 
 function initDestinations() {
     const grid = document.getElementById('destinationsGrid');
