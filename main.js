@@ -288,11 +288,11 @@ function loadBookings() {
                                     <td>${booking.guests}</td>
                                     <td>${formatDateTime(booking.timestamp)}</td>
                                     <td>
-    <button class="cancel-btn" onclick="cancelBooking(${index})">
+    <button onclick="cancelBooking(${index})" style="background:orange;color:white;border:none;padding:5px;">
         Cancel
     </button>
-    <button class="delete-btn" onclick="deleteBooking(${index})">
-        <i class="fas fa-trash"></i>
+    <button onclick="deleteBooking(${index})" style="background:red;color:white;border:none;padding:5px;">
+        Delete
     </button>
 </td>
                                 </tr>
